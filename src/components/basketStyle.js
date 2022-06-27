@@ -3,17 +3,20 @@ import { border } from "@mui/system";
 import '../App.css'
 
 export const BuyBasket = styled(Box)({
-    width:'35vw',
+   position:'relative',
+    width:'32vw',
+    height:'52%',
     textAlign:'center',
 display:'flex',
 flexDirection:'column',
-fontFamily:'Vazir'
+fontFamily:'Vazir',
+borderRight:'solid 1px gray'
+
 
    });
    export const BasketCard = styled(Box)({
     width:'60%',
-    // height:'100px',
-    padding:'40px',
+    padding:'17px',
    backgroundColor:'#FFFFFF',
    textAlign:'end',
    marginBottom:'16px',

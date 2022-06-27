@@ -14,7 +14,7 @@ const OrdersSlice = createSlice({
         }
       },
       ordersReceived(state, action) {
-        console.log(state)
+        
 
         if (state.loading === "pending") {
           state.loading = "idle";

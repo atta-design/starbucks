@@ -1,4 +1,4 @@
-import {Toolbar,styled,Link}from '@mui/material';
+import {Toolbar,styled,Link,Box}from '@mui/material';
 
 export const Bar = styled(Toolbar)({
    width:'96%',
@@ -14,13 +14,12 @@ export const Bar = styled(Toolbar)({
        direction:'rtl',
        color:'#404040',
 textDecoration:'none'  ,
-marginLeft:'30px'     
+marginLeft:'90px'  ,
+fontSize:'25px'   ,
+fontWeight:'400'
       });
 
-//       export const LOGO = styled(Icon)({
-//          height:'40px',
-//          direction:'rtl',
-//          color:'#404040',
-//   textDecoration:'none'  ,
-//   marginLeft:'30px'     
-//         });
+      export const NavContainer = styled(Box)({
+         marginRight:'110px',
+       
+        });

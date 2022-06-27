@@ -45,7 +45,6 @@ img{
   width: 168px;
   height: 168px;
   border-radius: 100% 100% 100% 100%;
-  /* top: -20px; */
   margin-top:-45px;
   overflow: visible;
   position:absolute;
@@ -58,7 +57,6 @@ img{
   
   height: 49px;
   border: none;
-  /* margin: 0 auto; */
   font-size: 15px;
   font-family:Vazir ;
   
@@ -68,8 +66,12 @@ img{
   color:rgb(133, 132, 132) ;
   width: 40%;
   text-align: center;
-  margin: 370px auto 0 auto;
+  margin: 0px auto 0 auto;
   font-family:Vazir-Light ;
+  position: relative;
+  top: 241px;
+  left: 0px;
+  
 }
 .border{
   box-sizing: border-box;
@@ -78,25 +80,102 @@ img{
   height: 30px;
   margin: 0 auto;
   
-  /* margin-top: 0px;
-  margin-bottom: -90px;
-margin-left: 900px; */
-
+  
 }
 .az{
-  width: 10px;
-  height: 10px;
-  background-color: #636100;
-  position: relative;
-  top: -7px;
-  left: 59px;
-  column-gap: 160px;
-
+  font-family: Vazir;
+  font-size: 25px;
+  font-weight: 400;
+  position: absolute;
+  justify-content: center;
+  top: -35px;
+  color:#404040 ;
+  width: 200px;
+  text-align: center;
 }
 .quantityBox{
   display: flex;
 }
 .priceBox{
 color: #006341;
+position: absolute;
+width: 70px;
+right: 19px;
+
+}
+.title1{
+  margin: 0px 0px 0px 0px;
+  height:50px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.logo{
+  width: 70px;
+  height: 70px;
+  margin-top: -20px;
+}
+.logo2{
+  width: 11px;
+  height: 6px;
+  margin-top:42px ;
+  margin-left: 0px;
+}
+.basketLogo{
+  width:200px;
+height: 100.33px;
+position: relative;
+top: 200px;
+
+}
+.basketLogo2{
+  width:60px;
+height: 50.33px;
+position: relative;
+top: 181px;
+margin-left: -130px;
+}
+
+.BasketLogoContainer{
+  margin-left: -64px;
+}
+.bill{
+position: absolute;
+left: 0px;
+direction: ltr;
+display: flex;
+}
+.SerchIcon{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: -50px;
+  left: 20px;
+}
+
+.parent_class:nth-of-type(2),
+.parent_class:nth-of-type(5){ 
+  position: relative;
+  top: 70px;
+  overflow: visible
+};
+
+/* hr.style14 { 
+  color: red;
+  background-color: #006341;
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+} */
+
+line{
+
+ background-color: red!important;
+  /* border: 0; 
+  height: 1px; 
+  background-image: Linear-Gradient(to right, red , yellow) */
 
 }

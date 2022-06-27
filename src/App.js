@@ -9,8 +9,10 @@ function App() {
   const data = useSelector((state) => state.users.users);
   const dispatch = useDispatch();
   let emails= data.map((a)=>a.email)
-  let isValid=emails.includes(localStorage.getItem("login"))
-  
+  let isValid=emails.includes(sessionStorage.getItem("login"))
+    // console.log(localStorage.getItem("login"))
+    
+
   useEffect(() => {
     dispatch(fetchUsers());
     
@@ -18,24 +20,30 @@ function App() {
   let id;
   React.useMemo(
     () =>
-   
-      data.length !== 0  &&
+    // localStorage.getItem("login")===null&&
+      
       // localStorage.getItem("login") !== data[data.length - 1].email &&
+      ((data.length !== 0 || data.length===null) &&
       !(isValid)&&
-      (id = prompt("آیدی خود را وارد کنید", "")) &&
-      localStorage.setItem("login", id),
-    [id]
+      (id = prompt("آیدی خود را وارد کنید", ""))) &&
+     
+      sessionStorage.setItem("login", id)
+   
+    [data.length]
   );
-  console.log(localStorage.getItem("login"))
+  // window.addEventListener("beforeunload", () => sessionStorage.removeItem("login"));
+ 
 
-  
   return (
     <div className="App">
 
      { (data.length !== 0 && isValid) ? 
        <Contaner/>
        : (
+        <div>
+         
         <div>NOT ACCESS</div>
+        </div>
       )}
 
       {/* {localStorage.getItem("login") ===
@@ -45,6 +53,8 @@ function App() {
 {/* <Basket/> */}
     </div>
   );
+
+  
 }
 
 export default App;
