@@ -9,7 +9,6 @@ function Contaner() {
     <MainContainer>
       <Header />
       <BasketAndProductListContainer>
-        {/* <hr /> */}
         <Basket />
         <ProductsList />
       </BasketAndProductListContainer>

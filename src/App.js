@@ -19,8 +19,8 @@ function App() {
       (data.length !== 0 || data.length === null) &&
       !isValid &&
       (id = prompt("ایمیل خود را وارد کنید", "")) &&
-      localStorage.setItem("login", id),[data.length]
-  );
+      localStorage.setItem("login", id)[data.length],
+  [data.length]);
 
   return (
     <div className="App">
@@ -28,7 +28,7 @@ function App() {
         <Contaner />
       ) : (
         <div>
-          <div>NOT ACCESS</div>
+          <div>NOT ACCESS press refresh button to retry</div>
         </div>
       )}
     </div>

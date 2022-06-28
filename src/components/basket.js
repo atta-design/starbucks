@@ -1,17 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  BuyBasket,
+  BasketContainer,
   BasketCard,
-  IncrementBtn,
-  DecrementBtn,
+  IncrementBtnAndDecrementBtn,
   Bill,
   SendButton,
   NullBasket,
   BasketLogoContainer,
   PriceBox,
-  QuantityBox
-
+  QuantityBox,
 } from "./basketStyle";
 import { Line } from "./productListStyle";
 import { add, decrement, remove } from "./redux/basketReducer";
@@ -20,7 +18,7 @@ import "../App.css";
 import BasketLogo from "./images/Vector (5).svg";
 import BasketLogo2 from "./images/Vector (6).svg";
 import IncrementIcon from "./images/+.svg";
-import DecremrntIcon from "./images/- (1).svg"
+import DecremrntIcon from "./images/- (1).svg";
 function Basket() {
   const dispatch = useDispatch();
   const card = useSelector((state) => state.shopReducer.card);
@@ -28,42 +26,43 @@ function Basket() {
   const tax = itemsPrice * 0.09;
   const totalPrice = itemsPrice + tax;
 
-  const handleSend = () => {
-    // axios.patch(`http://localhost:3000/orders/1`, {
-    //   userId: 2,
-    // });
-    card.map((item)=>
-    axios
-      .post(`http://localhost:3000/orders`, {
-      quantity: item.qty,
-      productId:item.id
-       
-      }).catch((err) => alert(err))&&dispatch(remove({ id: item.id })))
-    // &&window.location.reload()
-    
-      
-  };
+  // post bought items to json-server
 
+  const handleSend = () => {
+    card.map(
+      (item) =>
+        axios
+          .post(`http://localhost:3000/orders`, {
+            quantity: item.qty,
+            productId: item.id,
+            userId: localStorage.getItem("login"),
+          })
+          .catch((err) => alert(err)) && dispatch(remove({ id: item.id }))
+    );
+  };
   return (
     <div>
-      <BuyBasket>
+      <BasketContainer>
         {card.length !== 0 ? (
           <div>
             {card.map((item) => (
-              <BasketCard>
+              <BasketCard key={item.id}>
                 {item.title}
                 <PriceBox>
-                <span>تومان</span>
+                  <span>تومان</span>
                   <span>{item.price}</span>
-
                 </PriceBox>
                 <div>
                   <QuantityBox>
-                    <IncrementBtn
+                    <IncrementBtnAndDecrementBtn
                       onClick={() => dispatch(add({ id: item.id }))}
                     >
-                      <img src={IncrementIcon} alt='IncrementIcon' className="quantityIcons"/>
-                    </IncrementBtn>
+                      <img
+                        src={IncrementIcon}
+                        alt="IncrementIcon"
+                        className="quantityIcons"
+                      />
+                    </IncrementBtnAndDecrementBtn>
                     <div>
                       {" "}
                       &nbsp;&nbsp;
@@ -72,12 +71,15 @@ function Basket() {
                         : item.qty}
                       &nbsp;&nbsp;
                     </div>
-                    <DecrementBtn
+                    <IncrementBtnAndDecrementBtn
                       onClick={() => dispatch(decrement({ id: item.id }))}
                     >
-                     <img src={DecremrntIcon} alt='IncrementIcon' className="quantityIcons"/>
-                     
-                    </DecrementBtn>
+                      <img
+                        src={DecremrntIcon}
+                        alt="IncrementIcon"
+                        className="quantityIcons"
+                      />
+                    </IncrementBtnAndDecrementBtn>
                   </QuantityBox>
                 </div>
               </BasketCard>
@@ -85,11 +87,15 @@ function Basket() {
           </div>
         ) : (
           <div>
-            <BasketLogoContainer >
-              <img src={BasketLogo} alt='BasketLogo' className="basketLogo" />
-              <img  src={BasketLogo2} alt='BasketLogo2' className="basketLogo2"/>
+            <BasketLogoContainer>
+              <img src={BasketLogo} alt="BasketLogo" className="basketLogo" />
+              <img
+                src={BasketLogo2}
+                alt="BasketLogo2"
+                className="basketLogo2"
+              />
             </BasketLogoContainer>
-            <NullBasket >سبد خرید شما خالی است</NullBasket>
+            <NullBasket>سبد خرید شما خالی است</NullBasket>
           </div>
         )}
 
@@ -97,37 +103,40 @@ function Basket() {
           {card.length !== 0 && (
             <BasketCard>
               <div>
-                <Bill >
+                <Bill>
                   <span>تومان</span>
                   {itemsPrice}
                 </Bill>
                 :مجموع
               </div>
               <div>
-                <Bill >
+                <Bill>
                   <span>تومان</span>
                   {tax}
                 </Bill>
                 :مالیات
               </div>
-             <Line sx={{backgroundColor:'gray',height:'1px',width:'100%',marginBlock:'7px'}}/>
-           
+              <Line
+                sx={{
+                  backgroundColor: "gray",
+                  height: "1px",
+                  width: "100%",
+                  marginBlock: "7px",
+                }}
+              />
+
               <div>
-                
-                <Bill >
-                   
+                <Bill>
                   <span>تومان</span>
                   {totalPrice}
                 </Bill>
                 : قابل پرداخت
               </div>
-              <SendButton  onClick={handleSend}>
-                نهایی کردن سفارش{" "}
-              </SendButton>
+              <SendButton onClick={handleSend}>نهایی کردن سفارش </SendButton>
             </BasketCard>
           )}
         </div>
-      </BuyBasket>
+      </BasketContainer>
     </div>
   );
 }

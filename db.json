@@ -31,7 +31,7 @@
       "id": 2,
       "poster": "https://globalassets.starbucks.com/assets/cacdf793d82648329cfec7df33148da4.jpg?impolicy=1by1_tight_288",
       "title": "نوشیدنی فراپوچینو ترکیبی با کِرِم کارامل",
-      "price": 6,
+      "price": 75000,
       "category": "frappuccino"
     },
     {
@@ -85,34 +85,6 @@
     }
   ],
   "orders": [
-    {
-      "id": 1,
-      "userId": 2,
-      "items": [
-        {
-          "productId": 2,
-          "quantity": 3
-        },
-        {
-          "productId": 8,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "quantity": 1,
-      "productId": 2,
-      "id": 2
-    },
-    {
-      "quantity": 1,
-      "productId": 1,
-      "id": 3
-    },
-    {
-      "quantity": 1,
-      "productId": 3,
-      "id": 4
-    }
+   
   ]
 }

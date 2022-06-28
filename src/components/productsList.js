@@ -10,11 +10,11 @@ import {
   Price,
   Title,
   Line,
-  ProgressSpinnerContainer
+  ProgressSpinnerContainer,
 } from "./productListStyle";
 import { add } from "./redux/basketReducer";
 import "../App.css";
-import { CircularProgress } from "@mui/material" 
+import { CircularProgress } from "@mui/material";
 function ProductsList() {
   const products = useSelector((state) => state.products.products);
   const dispatch = useDispatch();
@@ -28,7 +28,6 @@ function ProductsList() {
       dispatch(fetchCard());
     }, 2000);
   }, [dispatch]);
-  console.log(products);
   return (
     <>
       {products.length !== 0 ? (
@@ -41,8 +40,8 @@ function ProductsList() {
             {products
               .filter((pro) => pro.category === "frappuccino")
               .map((product) => (
-                <ProductCard className="parent_class">
-                  <img src={product.poster} alt='product poster'/>
+                <ProductCard key={product.id} className="parent_class">
+                  <img src={product.poster} alt="product poster" />
                   <ProductName>{product.title}</ProductName>
                   <Price>
                     <span>تومان</span>
@@ -50,21 +49,20 @@ function ProductsList() {
                   </Price>
                   <AddButton onClick={() => dispatch(add({ id: product.id }))}>
                     افزودن به سبد
-                  </AddButton>
-                {" "}
+                  </AddButton>{" "}
                 </ProductCard>
               ))}
           </ProductCardsContainer>
           <ProductCardsContainer>
-            <Title >
-              صبحانه
+            <Title>
+              میکس صبحانه
               <Line />
             </Title>
             {products
               .filter((product) => product.category === "breakfast")
               .map((product) => (
-                <ProductCard className="parent_class">
-                  <img src={product.poster} alt='product poster' />
+                <ProductCard key={product.id} className="parent_class">
+                  <img src={product.poster} alt="product poster" />
                   <ProductName>{product.title}</ProductName>
                   <Price>
                     {" "}
@@ -81,9 +79,8 @@ function ProductsList() {
       ) : (
         <div>
           <ProgressSpinnerContainer>
-            <CircularProgress size="10rem"/>
-             </ProgressSpinnerContainer>
-       
+            <CircularProgress size="10rem" />
+          </ProgressSpinnerContainer>
         </div>
       )}
     </>
