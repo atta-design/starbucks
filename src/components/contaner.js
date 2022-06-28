@@ -1,20 +1,19 @@
-import React from 'react'
-import '../App.css'
-import ProductsList from './productsList'
-import Basket from './basket'
-import Header from './header'
- function Contaner() {
-    return (
-        <div className='container'>
-            <Header/>
-             <div className='main' >
-           
-             <hr/>
-            <Basket/>
-            <ProductsList/>
-           </div>
-            
-        </div>
-    )
+import React from "react";
+import "../App.css";
+import ProductsList from "./productsList";
+import Basket from "./basket";
+import Header from "./header";
+import { MainContainer,BasketAndProductListContainer } from './containerStyle'
+function Contaner() {
+  return (
+    <MainContainer>
+      <Header />
+      <BasketAndProductListContainer>
+        {/* <hr /> */}
+        <Basket />
+        <ProductsList />
+      </BasketAndProductListContainer>
+    </MainContainer>
+  );
 }
-export default Contaner
+export default Contaner;

@@ -1,19 +1,9 @@
-import { configureStore,combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import CategoriesSlice from "./categories";
 import OrdersSlice from "./orders";
 import usersSlice from "./userInformation";
 import ProductsSlice from "./products";
-import Mreducer from "./basketReducer"
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from "redux-persist/lib/storage";
-
-
-
-// const persistConfig = {
-//   key: 'root',
-//   storage,
-// }
-// const persistedReducer = persistReducer(persistConfig, rootReducer)
+import BasketReducer from "./basketReducer"
 
 
 export const store = configureStore({
@@ -22,8 +12,7 @@ export const store = configureStore({
     orders:OrdersSlice,
     categories:CategoriesSlice,
     products:ProductsSlice,
-    shopreducer:Mreducer
+    shopReducer:BasketReducer
 
     },
   });
-  console.log()
