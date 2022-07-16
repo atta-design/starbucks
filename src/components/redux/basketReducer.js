@@ -27,6 +27,7 @@ const BasketReducer = createSlice({
       const incard = state.card.find((item) =>
         item.id === action.payload.id ? true : false
       );
+      
       return {
         ...state,
         card: incard
@@ -40,19 +41,16 @@ const BasketReducer = createSlice({
     },
 
     decrement: (state, action) => {
-      const item = state.orders.find((pro) => pro.id === action.payload.id);
-      const incard = state.card.find((item) =>
-        item.id === action.payload.id ? true : false
-      );
+     
       return {
         ...state,
-        card: incard
-          ? state.card.map((item) =>
+        card:
+           state.card.map((item) =>
               item.id === action.payload.id
-                ? { ...item, qty: item.qty - 1 }
+                ? {...item  ,qty: item.qty - 1 }
                 : item
             )
-          : [...state.card, { ...item, qty: 1 }],
+          
       };
     },
     remove: (state, action) => {

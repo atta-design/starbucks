@@ -8,6 +8,7 @@ const ProductsSlice = createSlice({
       products: [],
     },
     reducers: {
+      
         productsLoading(state) {
         if (state.loading === "idle") {
           state.loading = "pending";

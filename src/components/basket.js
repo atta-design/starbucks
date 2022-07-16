@@ -25,7 +25,8 @@ function Basket() {
   const itemsPrice = card.reduce((a, c) => a + c.price * c.qty, 0);
   const tax = itemsPrice * 0.09;
   const totalPrice = itemsPrice + tax;
-
+  // const card2 = useSelector((state) => state.shopReducer);
+// console.log(card2)
   // post bought items to json-server
 
   const handleSend = () => {
