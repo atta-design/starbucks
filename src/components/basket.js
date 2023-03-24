@@ -15,10 +15,10 @@ import { Line } from "./productListStyle";
 import { add, decrement, remove } from "../redux/basketReducer";
 import axios from "axios";
 import "../App.css";
-import BasketLogo from "./images/Vector (5).svg";
-import BasketLogo2 from "./images/Vector (6).svg";
-import IncrementIcon from "./images/+.svg";
-import DecremrntIcon from "./images/- (1).svg";
+import BasketLogo from "../images/Vector (5).svg";
+import BasketLogo2 from "../images/Vector (6).svg";
+import IncrementIcon from "../images/+.svg";
+import DecremrntIcon from "../images/- (1).svg";
 function Basket() {
   const dispatch = useDispatch();
   const card = useSelector((state) => state.shopReducer.card);

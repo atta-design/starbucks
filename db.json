@@ -85,6 +85,11 @@
     }
   ],
   "orders": [
-   
+    {
+      "quantity": 1,
+      "productId": 1,
+      "userId": null,
+      "id": 1
+    }
   ]
 }

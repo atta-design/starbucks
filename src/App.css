@@ -1,26 +1,26 @@
 @font-face {
   font-family: "CustomFont";
-  src: url("./components/fonts/IRANSansWeb\(FaNum\).ttf");
+  src: url("/public/assets/fonts/IRANSansWeb\(FaNum\).ttf");
 }
 @font-face {
   font-family: "Vazir-Bold";
-  src: url("./components/fonts/Vazir-Bold.ttf");
+  src: url("/public/assets/fonts/Vazir-Bold.ttf");
 }
 @font-face {
   font-family: "Vazir-Light";
-  src: url("./components/fonts/Vazir-Light.ttf");
+  src: url("/public/assets/fonts/Vazir-Light.ttf");
 }
 @font-face {
   font-family: "Vazir-Medium";
-  src: url("./components/fonts/Vazir-Medium.ttf");
+  src: url("/public/assets/fonts/Vazir-Medium.ttf");
 }
 @font-face {
   font-family: "Vazir-Thin";
-  src: url("./components/fonts/Vazir-Thin.ttf");
+  src: url("/public/assets/fonts/Vazir-Thin.ttf");
 }
 @font-face {
   font-family: "Vazir";
-  src: url("./components/fonts/Vazir.ttf");
+  src: url("/public/assets/fonts/Vazir.ttf");
 }
 .App {
   display: flex;
@@ -31,7 +31,6 @@ img {
   height: 168px;
   border-radius: 100% 100% 100% 100%;
   margin-top: -45px;
-  overflow: visible;
   position: absolute;
 }
 
@@ -41,6 +40,7 @@ img {
   width: 40px;
   height: 30px;
   margin: 0 auto;
+  
 }
 
 .starbucksLogo {
@@ -95,7 +95,6 @@ img {
   img {
     width: 158px;
     height: 158px;
-   
   }
 
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { Bar, Links, NavContainer } from "./headerStyle";
-import starbucksLogo from "./images/Vector (3).svg";
-import trademarkLogo from "./images/Vector (4).svg";
-import SerchIcon from "../components/images/search-icon.svg";
+import starbucksLogo from "../images/Vector (3).svg";
+import trademarkLogo from "../images/Vector (4).svg";
+import SerchIcon from "../images/search-icon.svg";
 import "../App.css";
 
 function Header() {
