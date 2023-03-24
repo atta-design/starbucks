@@ -12,7 +12,7 @@ import {
   QuantityBox,
 } from "./basketStyle";
 import { Line } from "./productListStyle";
-import { add, decrement, remove } from "./redux/basketReducer";
+import { add, decrement, remove } from "../redux/basketReducer";
 import axios from "axios";
 import "../App.css";
 import BasketLogo from "./images/Vector (5).svg";

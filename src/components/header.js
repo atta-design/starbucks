@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { Bar, Links, NavContainer } from "./headerStyle";
 import starbucksLogo from "./images/Vector (3).svg";
 import trademarkLogo from "./images/Vector (4).svg";

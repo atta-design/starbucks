@@ -3,21 +3,20 @@ import axios from "axios";
 
 const CategoriesSlice = createSlice({
   name: "users",
-  initialState: {
-    loading: "idle",
-    users: [],
-  },
+  initialState:[],
+   
+  
+
   reducers: {
-    usersLoading(state) {
-      if (state.loading === "idle") {
-        state.loading = "pending";
-      }
-    },
+    // usersLoading(state) {
+    //   if (state.loading === "idle") {
+    //     state.loading = "pending";
+    //   }
+    // },
     usersReceived(state, action) {
-      if (state.loading === "pending") {
-        state.loading = "idle";
-        state.users = action.payload.slice(0, 200);
-      }
+    
+        state = action.payload.slice(0, 200);
+      
     },
   },
 });

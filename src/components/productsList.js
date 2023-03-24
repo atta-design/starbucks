@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchProducts } from "./redux/products";
-import { fetchCard } from "./redux/basketReducer";
+import { fetchProducts } from "../redux/products";
+import { fetchCard } from "../redux/basketReducer";
 import {
   ProductCard,
   ProductName,
@@ -12,7 +12,7 @@ import {
   Line,
   ProgressSpinnerContainer,
 } from "./productListStyle";
-import { add } from "./redux/basketReducer";
+import { add } from "../redux/basketReducer";
 import "../App.css";
 import { CircularProgress } from "@mui/material";
 function ProductsList() {
