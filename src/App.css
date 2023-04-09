@@ -23,9 +23,11 @@
   src: url("/public/assets/fonts/Vazir.ttf");
 }
 .App {
-  display: flex;
+  /* display: flex; */
 }
-
+a{
+  text-decoration: none;
+}
 img {
   width: 168px;
   height: 168px;

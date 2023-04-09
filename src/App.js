@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Contaner from "./components/contaner";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "./redux/userInformation";
+import Footer from "./components/Footer";
 
 function App() {
 //   const [value, setValue] = useState();
@@ -26,6 +27,8 @@ function App() {
     <div className="App">
      
         <Contaner />
+        <Footer/>
+
      
     </div>
   );

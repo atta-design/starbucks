@@ -8,11 +8,11 @@ const CategoriesSlice = createSlice({
   
 
   reducers: {
-    // usersLoading(state) {
-    //   if (state.loading === "idle") {
-    //     state.loading = "pending";
-    //   }
-    // },
+    usersLoading(state) {
+      if (state.loading === "idle") {
+        state.loading = "pending";
+      }
+    },
     usersReceived(state, action) {
     
         state = action.payload.slice(0, 200);
@@ -23,10 +23,12 @@ const CategoriesSlice = createSlice({
 
 export const { usersLoading, usersReceived } = CategoriesSlice.actions;
 
-export const fetchCategories = () => async (dispatch) => {
-  dispatch(usersLoading(null));
-  const response = await axios.get("http://localhost:3000/categories");
-  dispatch(usersReceived(await response.data));
-};
+export const fetchCategories=()=>async(dispatch)=>{
+dispatch(usersLoading(null)) 
 
+const response= await axios.get('http://localhost:3000/Categories')
+usersReceived()
+
+
+}
 export default CategoriesSlice.reducer;
