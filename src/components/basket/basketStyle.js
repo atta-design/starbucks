@@ -1,5 +1,5 @@
 import { Box, styled, Button, Typography } from "@mui/material";
-import "../App.css";
+import "../../App.css";
 
 export const BasketContainer = styled(Box)({
   position: "relative",

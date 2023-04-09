@@ -1,6 +1,6 @@
 import React from 'react'
 import { FooterStyle,FooterTextContainer,LicenseSymbolContainer,IMG } from './FooterStyle'
-import LicenseSymbol from '../images/480687.webp'
+import LicenseSymbol from '../../images/480687.webp'
 import { Avatar } from '@mui/material';
 
 
@@ -15,7 +15,7 @@ export default function Footer() {
             </FooterTextContainer>
            
            
-              
+               
         </FooterStyle> 
      
         </>

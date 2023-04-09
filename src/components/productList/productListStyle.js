@@ -1,5 +1,5 @@
 import { Card, styled, Typography, Box, Button } from "@mui/material";
-import "../App.css";
+import "../../App.css";
 
 export const ProductCardsContainer = styled(Box)({
   display: "flex",
